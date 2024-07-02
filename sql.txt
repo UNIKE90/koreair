@@ -1,0 +1,19 @@
+1. table 쿼리문 작성하기
+create table korair_member (
+  mb_no int(11) not null auto_increment,
+  mb_id varchar(20) not null default '',
+  mb_pw varchar(255) not null default '',
+  mb_name varchar(20) not null default '',
+  mb_datetime datetime not null default current_timestamp,
+  primary key(mb_no),
+  unique key(mb_id),
+  key mb_datetime (mb_datetime)
+)
+----------------------------------------------------
+2. table에 데이터 입력을 위한 쿼리문
+insert into korair_member values(1, 'master', '1234', '관리자', '2024-06-24 11:29:20');
+
+pass암호화
+*89C6B530AA78695E257E55D63C00A6EC9AD3E977
+hash암호화
+$2y$10$LjjhKmdLUEcALNt12ZpfSOc50nfWQGKp4wQ.7VOlnD5FRo8OH7Dji

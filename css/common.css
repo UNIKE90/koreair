@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* common.css */
+
+/* 
+  body 서식
+  root:변수
+  메인컬러
+  보조컬러
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+:root{
+  --f_size11:0.68;
+  --f_size12:0.75rem;
+  --f_size13:0.81rem;
+  --f_size16:1rem;
+  --title_20:1.25rem;
+
+  --main_color:#5db9d2;
+  --t_color01:#333;
+}
+
+body{
+  font-family:"Noto Sans KR", "맑은 고딕", arial, sans-serif;
+  font-size:var(--f_size13);
+  color:var(--t_color01);
+}
+a{
+  font-family:"Noto Sans KR", "맑은 고딕", arial, sans-serif;
+  color:var(--t_color01);
+  text-decoration: none;
+}
+img{width:100%;}
+
+
+
+/* 상단헤더영역 */
+header{
+  width:100%;
+  height:68px;
+  background: var(--main_color);
+}
+header h1{
+  width:230px;
+  margin: 0 auto;
+  padding-top:20px;
+}
+
+.gnb_open, .gnb_close, .login_btn{
+  background: url('../images/btn_sprite.png');
+  text-indent:-9999px;
+  width: 48px; height:48px;
+  display:inline-block;
+  position:absolute;
+  top:10px;
+}
+.gnb_open{
+  left:10px;
+}
+#toggle_gnb{display:none;}
+.gnb_wrap{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,.8);
+  top:0;
+  z-index:10000;
+  transition: 1s;
+  right:100%;
+}
+#toggle_gnb:checked +.gnb_wrap{
+  right:0;
+}
+.gnb{
+  width:70%;
+  height:100%;
+  background: #fff;
+  padding:50px;
+  box-sizing: border-box;
+}
+.gnb img{
+  width:230px;
+  display:block;
+  margin: 0 auto 10px;
+}
+.gnb .logout{
+  float: right;
+  font-size: var(--title_20);
+}
+.gnb ul{
+  margin-top:50px;
+}
+.gnb li{
+  font-size: var(--f_size16);
+  border-bottom:1px solid #333;
+  line-height: 50px;
+}
+.gnb li a{display:block;}
+.gnb_close{
+  background-position: 48px 0px;
+  right:10px;
+}
+.login_btn{
+  background-position: -48px 0px;
+  right:10px;
+}
+.login_txt{
+  position:absolute;
+  right:10px;
+  top:25px;
+  font-size: var(--f_size16);
+}
+
+
+
+/* 하단푸터영역 */
+footer{
+  background: #ddd;
+}
+.f_lnb{
+  text-align:center;
+  padding: 10px 0px;
+}
+.f_lnb li{
+  display:inline-block;
+  padding: 0px 10px;
+  border-right:1px solid #333;
+}
+.f_lnb li:first-child a{font-weight:bold;}
+.f_lnb li:last-child{border:none;}
+address{
+  font-style:normal;
+  padding: 10px 50px;
+}
